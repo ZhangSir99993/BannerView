@@ -42,6 +42,7 @@ public class MyPagerAdapter extends PagerAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //广告位点击事件
                 if (dataLists.size() < 4) {
                     Toast.makeText(context, dataLists.get(realPosition % dataLists.size()).getToastString(), Toast.LENGTH_SHORT).show();
                 } else {
@@ -69,7 +70,10 @@ public class MyPagerAdapter extends PagerAdapter {
         return getDatas() == null ? 0 : getDatas().size();
     }
 
-
+    /**
+     * 对列表数小于3的数据进行处理
+     * @return 返回个数为6的新列表
+     */
     private ArrayList<View> getDatas() {
         ArrayList<View> viewLists = new ArrayList<View>();
         LayoutInflater li = ((Activity) context).getLayoutInflater();
